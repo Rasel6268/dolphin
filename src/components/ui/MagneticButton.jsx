@@ -8,7 +8,7 @@ export default function MagneticButton({
   className = "",
   onClick,
   href,
-  variant = "primary", // primary, secondary, outline, text
+  variant = "primary", // primary, secondary, outline, green, white
   ...props
 }) {
   const ref = useRef(null);
@@ -17,8 +17,8 @@ export default function MagneticButton({
   const handleMouseMove = (e) => {
     const { clientX, clientY } = e;
     const { left, top, width, height } = ref.current.getBoundingClientRect();
-    const x = (clientX - (left + width / 2)) * 0.25;
-    const y = (clientY - (top + height / 2)) * 0.25;
+    const x = (clientX - (left + width / 2)) * 0.2;
+    const y = (clientY - (top + height / 2)) * 0.2;
     setPosition({ x, y });
   };
 
@@ -27,19 +27,19 @@ export default function MagneticButton({
   };
 
   const baseClasses =
-    "inline-flex items-center justify-center font-medium tracking-wide transition-colors duration-300 relative group overflow-hidden cursor-pointer select-none text-sm uppercase px-7 py-3.5 rounded-sm";
+    "inline-flex items-center justify-center font-semibold tracking-wide transition-all duration-200 relative group overflow-hidden cursor-pointer select-none text-xs uppercase px-5 py-2.5 sm:px-6 sm:py-3 rounded-md";
 
   const variants = {
     primary:
-      "bg-[#111111] text-white hover:bg-[#1B4332] shadow-sm hover:shadow-md border border-[#111111]",
+      "bg-[#0F172A] text-white hover:bg-[#1B4332] shadow-xs hover:shadow-sm border border-[#0F172A] hover:border-[#1B4332]",
     secondary:
-      "bg-white text-[#111111] hover:bg-[#F7F7F3] border border-neutral-300 hover:border-neutral-400 shadow-sm",
+      "bg-white text-[#0F172A] hover:bg-[#F8F9FA] border border-neutral-200 hover:border-neutral-300 shadow-xs",
     outline:
-      "bg-transparent text-[#111111] border border-neutral-900/20 hover:border-neutral-900 hover:bg-[#111111] hover:text-white",
+      "bg-transparent text-[#0F172A] border border-neutral-300 hover:border-[#0F172A] hover:bg-[#0F172A] hover:text-white",
     green:
-      "bg-[#1B4332] text-white hover:bg-[#2D6A4F] border border-[#1B4332] shadow-sm",
+      "bg-[#1B4332] text-white hover:bg-[#143427] border border-[#1B4332] shadow-xs",
     white:
-      "bg-white text-[#111111] hover:bg-neutral-100 border border-white",
+      "bg-white text-[#0F172A] hover:bg-neutral-50 border border-neutral-200 shadow-xs",
   };
 
   const Component = href ? motion.a : motion.button;
@@ -52,7 +52,7 @@ export default function MagneticButton({
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
       animate={{ x: position.x, y: position.y }}
-      transition={{ type: "spring", stiffness: 150, damping: 15, mass: 0.1 }}
+      transition={{ type: "spring", stiffness: 180, damping: 18, mass: 0.1 }}
       className={`${baseClasses} ${variants[variant] || variants.primary} ${className}`}
       {...props}
     >

@@ -11,14 +11,14 @@ export default function QualitySection() {
   const activePrinciple = tqmPrinciples.find((p) => p.id === activeId) || tqmPrinciples[0];
 
   return (
-    <section id="quality" className="py-20 lg:py-32 bg-white border-b border-black/5 overflow-hidden">
+    <section id="quality" className="py-16 lg:py-24 bg-white border-b border-neutral-200/80 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeading
           label="Total Quality Management (TQM)"
-          title="QUALITY IS NOT A CHECKPOINT. IT'S A CULTURE."
+          title="Quality Is Not a Checkpoint. It's a Culture."
           subtitle="Our engineering-first quality culture ensures statistical inspection across every batch, ensuring seamless compliance with international buyers."
           align="center"
-          className="mb-16 lg:mb-20"
+          className="mb-12 lg:mb-16"
         />
 
         {/* Desktop Interactive Circular Radial Diagram */}
@@ -60,14 +60,14 @@ export default function QualitySection() {
 
           {/* Center Hub: TOTAL QUALITY MANAGEMENT */}
           <motion.div
-            whileHover={{ scale: 1.05 }}
-            className="relative z-20 w-44 h-44 rounded-full bg-[#111111] text-white flex flex-col items-center justify-center p-4 text-center shadow-2xl border-4 border-[#1B4332]"
+            whileHover={{ scale: 1.03 }}
+            className="relative z-20 w-40 h-40 rounded-full bg-[#0F172A] text-white flex flex-col items-center justify-center p-4 text-center shadow-lg border-3 border-[#1B4332]"
           >
-            <ShieldCheck className="w-8 h-8 text-emerald-400 mb-1" />
-            <div className="text-[10px] font-mono tracking-widest text-emerald-400 uppercase font-bold">
+            <ShieldCheck className="w-7 h-7 text-emerald-400 mb-1" />
+            <div className="text-[10px] font-mono tracking-widest text-emerald-400 uppercase font-semibold">
               Core Framework
             </div>
-            <div className="text-sm font-extrabold tracking-wider uppercase leading-tight mt-0.5">
+            <div className="text-xs font-bold tracking-wider uppercase leading-tight mt-0.5">
               TOTAL<br />QUALITY<br />MANAGEMENT
             </div>
           </motion.div>
@@ -89,10 +89,10 @@ export default function QualitySection() {
                 style={{
                   transform: `translate(${x}px, ${y}px)`,
                 }}
-                className={`absolute z-20 px-4 py-2.5 rounded-full border text-xs font-bold uppercase tracking-wider transition-all duration-300 shadow-md ${
+                className={`absolute z-20 px-3.5 py-2 rounded-full border text-[11px] font-semibold tracking-wide transition-all duration-200 shadow-xs cursor-pointer ${
                   isActive
-                    ? "bg-[#1B4332] text-white border-[#1B4332] scale-110 shadow-lg ring-4 ring-[#1B4332]/20"
-                    : "bg-white text-[#111111] border-black/10 hover:border-[#1B4332]"
+                    ? "bg-[#1B4332] text-white border-[#1B4332] scale-105 shadow-md ring-3 ring-[#1B4332]/20"
+                    : "bg-white text-neutral-800 border-neutral-200 hover:border-[#1B4332]"
                 }`}
               >
                 {item.title}
@@ -102,24 +102,24 @@ export default function QualitySection() {
         </div>
 
         {/* Selected Principle Active Explainer Card */}
-        <div className="mt-8 max-w-xl mx-auto text-center bg-[#F7F7F3] p-6 sm:p-8 rounded-xl border border-black/10 shadow-sm">
+        <div className="mt-8 max-w-xl mx-auto text-center bg-[#F8F9FA] p-6 sm:p-7 rounded-xl border border-neutral-200/80 shadow-xs">
           <AnimatePresence mode="wait">
             <motion.div
               key={activePrinciple.id}
-              initial={{ opacity: 0, y: 10 }}
+              initial={{ opacity: 0, y: 8 }}
               animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -10 }}
-              transition={{ duration: 0.25 }}
-              className="space-y-2"
+              exit={{ opacity: 0, y: -8 }}
+              transition={{ duration: 0.2 }}
+              className="space-y-1.5"
             >
-              <div className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-widest text-[#1B4332]">
+              <div className="inline-flex items-center gap-1.5 text-[11px] font-semibold uppercase tracking-wider text-[#1B4332]">
                 <Sparkles className="w-3.5 h-3.5" />
                 Principle {activePrinciple.id} of 08
               </div>
-              <h4 className="text-xl sm:text-2xl font-extrabold text-[#111111]">
+              <h4 className="text-lg sm:text-xl font-bold text-[#0F172A]">
                 {activePrinciple.title}
               </h4>
-              <p className="text-sm text-[#5A5A5A] leading-relaxed">
+              <p className="text-xs sm:text-sm text-[#475569] leading-relaxed">
                 {activePrinciple.subtitle}
               </p>
             </motion.div>
@@ -127,15 +127,15 @@ export default function QualitySection() {
         </div>
 
         {/* Mobile Grid Alternative for Accessibility and Small Screens */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-8 lg:hidden">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 mt-8 lg:hidden">
           {tqmPrinciples.map((principle) => (
             <div
               key={principle.id}
               onClick={() => setActiveId(principle.id)}
-              className={`p-4 rounded-lg border text-left cursor-pointer transition-all ${
+              className={`p-3.5 rounded-lg border text-left cursor-pointer transition-all ${
                 activeId === principle.id
                   ? "bg-[#1B4332] text-white border-[#1B4332]"
-                  : "bg-white text-[#111111] border-black/10"
+                  : "bg-white text-neutral-800 border-neutral-200"
               }`}
             >
               <div className="flex items-center justify-between text-xs font-mono font-bold mb-1">

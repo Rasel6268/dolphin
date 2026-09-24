@@ -20,53 +20,57 @@ export default function CtaSection() {
         <div className="absolute inset-0 bg-gradient-to-r from-black via-black/80 to-black/60" />
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center py-4">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 15 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-emerald-400/30 bg-emerald-950/50 text-emerald-300 text-xs font-semibold uppercase tracking-[0.2em] mb-6"
+          className="inline-flex items-center gap-2 px-3 py-1 rounded-md border border-white/20 bg-white/10 text-neutral-200 text-[11px] font-semibold uppercase tracking-wider mb-5"
         >
-          <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+          <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
           Global Sourcing & Direct Export
         </motion.div>
 
         <motion.h2
-          initial={{ opacity: 0, y: 25 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.1 }}
-          className="text-4xl sm:text-5xl lg:text-7xl font-extrabold tracking-tight text-white uppercase max-w-4xl mx-auto leading-none"
-        >
-          LET'S BUILD SOMETHING BETTER TOGETHER.
-        </motion.h2>
-
-        <motion.p
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="text-base sm:text-xl text-neutral-300 max-w-2xl mx-auto mt-6 font-normal leading-relaxed"
+          transition={{ duration: 0.5, delay: 0.08 }}
+          className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-white max-w-2xl mx-auto leading-snug"
         >
-          Looking for a reliable knitwear manufacturing partner in Bangladesh? Connect directly with our engineering and export team today.
+          Let's Build Reliable Manufacturing Together.
+        </motion.h2>
+
+        <motion.p
+          initial={{ opacity: 0, y: 15 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.15 }}
+          className="text-sm sm:text-base text-neutral-300 max-w-lg mx-auto mt-4 font-normal leading-relaxed"
+        >
+          Looking for a dependable knitwear manufacturing partner in Bangladesh? Connect directly with our engineering and export team today.
         </motion.p>
 
         {/* CTA Buttons */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 15 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.3 }}
-          className="flex flex-wrap items-center justify-center gap-4 mt-10"
+          transition={{ duration: 0.5, delay: 0.22 }}
+          className="flex flex-wrap items-center justify-center gap-3.5 mt-8"
         >
           <MagneticButton href="#contact" variant="green">
             Send an Inquiry
-            <ArrowUpRight className="w-4 h-4" />
+            <ArrowUpRight className="w-3.5 h-3.5" />
           </MagneticButton>
 
-          <MagneticButton href="#contact" variant="outline" className="!text-white !border-white/30 hover:!bg-white hover:!text-black">
-            <Mail className="w-4 h-4" />
+          <MagneticButton
+            href="#contact"
+            variant="outline"
+            className="!text-white !border-white/30 hover:!bg-white hover:!text-neutral-900"
+          >
+            <Mail className="w-3.5 h-3.5" />
             Contact Our Team
           </MagneticButton>
         </motion.div>

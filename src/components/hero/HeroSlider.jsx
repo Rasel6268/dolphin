@@ -25,7 +25,7 @@ export default function HeroSlider() {
     <section
       id="hero"
       aria-label="Factory Showcase Slider"
-      className="relative w-full overflow-hidden bg-neutral-950 select-none h-[56svh] sm:h-[68svh] md:h-[78svh] lg:h-[86svh] xl:h-[90svh] min-h-[340px] sm:min-h-[440px] md:min-h-[520px] lg:min-h-[600px] max-h-[980px] landscape:min-h-[300px]"
+      className="relative w-full overflow-hidden bg-neutral-950 select-none h-[100svh] min-h-[560px]"
     >
       {/* ─── BACKGROUND SWIPER: Full bleed imagery ─── */}
       <div className="absolute inset-0 z-0">
@@ -54,11 +54,11 @@ export default function HeroSlider() {
                 priority={index === 0}
                 sizes="100vw"
                 className="object-cover object-center w-full h-full transition-transform duration-1000 ease-out"
-                quality={90}
+                quality={92}
               />
 
-              {/* Elegant soft vignettes preserving photo clarity & providing contrast for controls/navbar */}
-              <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/40 pointer-events-none" />
+              {/* Cinematic gradient: soft dark top for transparent navbar legibility, clear center, subtle bottom for controls */}
+              <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/10 to-black/50 pointer-events-none" />
             </SwiperSlide>
           ))}
         </Swiper>
@@ -82,7 +82,7 @@ export default function HeroSlider() {
       </button>
 
       {/* ─── CLEAN PAGINATION INDICATOR (NO TEXT) ─── */}
-      <div className="absolute bottom-5 sm:bottom-7 left-1/2 -translate-x-1/2 z-30 flex items-center gap-2 sm:gap-2.5 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-black/40 backdrop-blur-md border border-white/15 shadow-lg">
+      <div className="absolute bottom-5 sm:bottom-7 left-1/2 -translate-x-1/2 z-30 flex items-center gap-2 sm:gap-2.5 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-black/40 backdrop-blur-md border border-white/20 shadow-md">
         {heroSlides.map((slide, idx) => {
           const isActive = activeIndex === idx;
           return (
@@ -92,8 +92,8 @@ export default function HeroSlider() {
               aria-label={`Go to slide ${idx + 1}`}
               className={`transition-all duration-300 rounded-full cursor-pointer ${
                 isActive
-                  ? "w-7 sm:w-9 h-2 sm:h-2.5 bg-emerald-400 shadow-[0_0_10px_rgba(52,211,153,0.8)]"
-                  : "w-2 sm:w-2.5 h-2 sm:h-2.5 bg-white/40 hover:bg-white/80"
+                  ? "w-7 sm:w-8 h-2 sm:h-2.5 bg-white shadow-xs"
+                  : "w-2 sm:w-2.5 h-2 sm:h-2.5 bg-white/40 hover:bg-white/75"
               }`}
             />
           );
@@ -101,13 +101,13 @@ export default function HeroSlider() {
       </div>
 
       {/* ─── SLIDE DURATION PROGRESS BAR ─── */}
-      <div className="absolute bottom-0 inset-x-0 h-[2.5px] bg-white/10 z-30 overflow-hidden pointer-events-none">
+      <div className="absolute bottom-0 inset-x-0 h-[2px] bg-white/15 z-30 overflow-hidden pointer-events-none">
         <motion.div
           key={activeIndex}
           initial={{ width: "0%" }}
           animate={{ width: "100%" }}
           transition={{ duration: 6, ease: "linear" }}
-          className="h-full bg-emerald-400/90 shadow-[0_0_8px_rgba(52,211,153,0.6)]"
+          className="h-full bg-white/80"
         />
       </div>
     </section>

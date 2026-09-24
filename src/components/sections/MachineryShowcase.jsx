@@ -17,25 +17,25 @@ export default function MachineryShowcase() {
       : machineryList.filter((m) => m.category === selectedCategory);
 
   return (
-    <section id="machinery" className="py-20 lg:py-28 bg-[#F7F7F3] border-b border-black/5">
+    <section id="machinery" className="py-16 lg:py-24 bg-[#F8F9FA] border-b border-neutral-200/80">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col lg:flex-row lg:items-end justify-between mb-12 lg:mb-16 gap-6">
+        <div className="flex flex-col lg:flex-row lg:items-end justify-between mb-10 lg:mb-14 gap-6">
           <SectionHeading
             label="Industrial Hardware"
-            title="PRECISION INDUSTRIAL MACHINERY."
+            title="Precision Industrial Machinery."
             subtitle="Equipped with specialized high-speed sewing machines, automated attachments, and precision finishing units to meet international export tolerance."
           />
 
           {/* Filter Tabs */}
-          <div className="flex items-center gap-1.5 p-1 bg-white border border-black/10 rounded-sm shadow-sm self-start">
+          <div className="flex items-center gap-1 p-1 bg-white border border-neutral-200 rounded-md shadow-xs self-start">
             {categories.map((cat) => (
               <button
                 key={cat}
                 onClick={() => setSelectedCategory(cat)}
-                className={`px-4 py-2 text-xs font-bold uppercase tracking-wider rounded-sm transition-all duration-200 ${
+                className={`px-3.5 py-1.5 text-xs font-semibold tracking-wide rounded-md transition-all duration-150 cursor-pointer ${
                   selectedCategory === cat
-                    ? "bg-[#111111] text-white shadow-sm"
-                    : "text-[#5A5A5A] hover:text-[#111111] hover:bg-black/5"
+                    ? "bg-[#1B4332] text-white shadow-xs"
+                    : "text-neutral-600 hover:text-neutral-900 hover:bg-neutral-100"
                 }`}
               >
                 {cat}
@@ -51,32 +51,32 @@ export default function MachineryShowcase() {
               <motion.div
                 key={machine.name}
                 layout
-                initial={{ opacity: 0, scale: 0.95 }}
+                initial={{ opacity: 0, scale: 0.96 }}
                 animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.95 }}
-                transition={{ duration: 0.3 }}
-                className="bg-white p-7 rounded-xl border border-black/10 hover:border-[#1B4332] shadow-sm hover:shadow-md transition-all duration-300 group flex flex-col justify-between"
+                exit={{ opacity: 0, scale: 0.96 }}
+                transition={{ duration: 0.25 }}
+                className="bg-white p-6 sm:p-7 rounded-xl border border-neutral-200/80 hover:border-[#1B4332] shadow-xs hover:shadow-sm transition-all duration-200 group flex flex-col justify-between"
               >
                 <div>
-                  <div className="flex items-center justify-between mb-4">
-                    <span className="text-[10px] font-mono uppercase font-bold tracking-widest px-2.5 py-1 bg-[#1B4332]/5 text-[#1B4332] rounded-sm border border-[#1B4332]/15">
+                  <div className="flex items-center justify-between mb-3.5">
+                    <span className="text-[10px] font-mono uppercase font-semibold tracking-wider px-2 py-0.5 bg-[#1B4332]/5 text-[#1B4332] rounded border border-[#1B4332]/15">
                       {machine.category}
                     </span>
-                    <span className="text-xs font-semibold text-neutral-400 group-hover:text-[#111111] transition-colors">
+                    <span className="text-xs font-medium text-neutral-400 group-hover:text-neutral-700 transition-colors">
                       {machine.count}
                     </span>
                   </div>
 
-                  <h4 className="text-lg font-extrabold text-[#111111] tracking-tight group-hover:text-[#1B4332] transition-colors mb-2">
+                  <h4 className="text-base sm:text-lg font-bold text-[#0F172A] tracking-tight group-hover:text-[#1B4332] transition-colors mb-1.5">
                     {machine.name}
                   </h4>
 
-                  <p className="text-xs sm:text-sm text-[#5A5A5A] leading-relaxed">
+                  <p className="text-xs sm:text-sm text-[#475569] leading-relaxed">
                     {machine.role}
                   </p>
                 </div>
 
-                <div className="pt-6 mt-6 border-t border-black/5 flex items-center justify-between text-[11px] text-neutral-400 font-medium">
+                <div className="pt-4 mt-5 border-t border-neutral-100 flex items-center justify-between text-[11px] text-neutral-400 font-medium">
                   <span className="flex items-center gap-1.5">
                     <Cpu className="w-3.5 h-3.5 text-[#1B4332]" />
                     Export Calibrated

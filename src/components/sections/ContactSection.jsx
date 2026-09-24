@@ -46,80 +46,80 @@ export default function ContactSection() {
   };
 
   return (
-    <section id="contact" className="py-20 lg:py-32 bg-[#F7F7F3] border-b border-black/5">
+    <section id="contact" className="py-16 lg:py-24 bg-[#F8F9FA] border-b border-neutral-200/80">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start">
           {/* Left Column: Direct Leadership & Factory Information */}
-          <div className="lg:col-span-5 space-y-8">
+          <div className="lg:col-span-5 space-y-6">
             <SectionHeading
               label="Direct Executive Contact"
-              title="START A CONVERSATION."
+              title="Start a Conversation."
               subtitle="Connect directly with our factory leadership to discuss sample development, volume production schedules, or technical knit specifications."
             />
 
             {/* Leadership Profile Card */}
-            <div className="bg-white p-7 rounded-2xl border border-black/10 shadow-sm space-y-6">
+            <div className="bg-white p-6 sm:p-7 rounded-xl border border-neutral-200/80 shadow-xs space-y-5">
               <div className="flex items-start justify-between">
                 <div>
-                  <div className="text-xs font-mono font-bold uppercase tracking-widest text-[#1B4332]">
+                  <div className="text-[11px] font-mono font-semibold uppercase tracking-wider text-[#1B4332]">
                     Executive Leadership
                   </div>
-                  <h3 className="text-xl font-extrabold text-[#111111] mt-0.5">
+                  <h3 className="text-lg font-bold text-[#0F172A] mt-0.5">
                     {companyInfo.leadership.name}
                   </h3>
-                  <p className="text-xs font-bold text-neutral-500 uppercase tracking-wider">
+                  <p className="text-xs font-semibold text-neutral-500 uppercase tracking-wider">
                     {companyInfo.leadership.title}
                   </p>
                   <p className="text-xs text-[#1B4332] font-semibold mt-0.5">
                     {companyInfo.leadership.credentials}
                   </p>
                 </div>
-                <div className="w-10 h-10 rounded-full bg-[#1B4332]/10 text-[#1B4332] flex items-center justify-center font-bold text-sm">
+                <div className="w-9 h-9 rounded-full bg-[#1B4332]/10 text-[#1B4332] flex items-center justify-center font-bold text-xs shadow-xs">
                   MD
                 </div>
               </div>
 
               {/* Direct Links */}
-              <div className="space-y-3 pt-4 border-t border-black/5 text-sm">
+              <div className="space-y-3 pt-3.5 border-t border-neutral-100 text-sm">
                 <a
                   href={`tel:${companyInfo.contact.phone.replace(/\s+/g, "")}`}
-                  className="flex items-center gap-3 text-[#111111] hover:text-[#1B4332] transition-colors group"
+                  className="flex items-center gap-3 text-neutral-800 hover:text-[#1B4332] transition-colors group"
                 >
-                  <div className="w-8 h-8 rounded-md bg-[#F7F7F3] flex items-center justify-center text-neutral-500 group-hover:bg-[#1B4332] group-hover:text-white transition-colors">
+                  <div className="w-8 h-8 rounded-md bg-[#F8F9FA] flex items-center justify-center text-neutral-500 group-hover:bg-[#1B4332] group-hover:text-white transition-colors">
                     <Phone className="w-4 h-4" />
                   </div>
                   <div>
                     <span className="block text-[10px] uppercase font-bold text-neutral-400">
                       Direct Phone / WhatsApp
                     </span>
-                    <span className="font-bold">{companyInfo.contact.phone}</span>
+                    <span className="font-semibold text-xs sm:text-sm">{companyInfo.contact.phone}</span>
                   </div>
                 </a>
 
                 <a
                   href={`mailto:${companyInfo.contact.email}`}
-                  className="flex items-center gap-3 text-[#111111] hover:text-[#1B4332] transition-colors group"
+                  className="flex items-center gap-3 text-neutral-800 hover:text-[#1B4332] transition-colors group"
                 >
-                  <div className="w-8 h-8 rounded-md bg-[#F7F7F3] flex items-center justify-center text-neutral-500 group-hover:bg-[#1B4332] group-hover:text-white transition-colors">
+                  <div className="w-8 h-8 rounded-md bg-[#F8F9FA] flex items-center justify-center text-neutral-500 group-hover:bg-[#1B4332] group-hover:text-white transition-colors">
                     <Mail className="w-4 h-4" />
                   </div>
                   <div>
                     <span className="block text-[10px] uppercase font-bold text-neutral-400">
                       Official Export Inquiries
                     </span>
-                    <span className="font-bold">{companyInfo.contact.email}</span>
+                    <span className="font-semibold text-xs sm:text-sm">{companyInfo.contact.email}</span>
                   </div>
                 </a>
 
                 <div className="flex items-start gap-3 pt-1">
-                  <div className="w-8 h-8 rounded-md bg-[#F7F7F3] flex items-center justify-center text-neutral-500 mt-0.5 flex-shrink-0">
+                  <div className="w-8 h-8 rounded-md bg-[#F8F9FA] flex items-center justify-center text-neutral-500 mt-0.5 flex-shrink-0">
                     <MapPin className="w-4 h-4" />
                   </div>
                   <div>
                     <span className="block text-[10px] uppercase font-bold text-neutral-400">
                       Factory Address
                     </span>
-                    <address className="not-italic text-xs leading-relaxed text-[#5A5A5A] font-medium">
+                    <address className="not-italic text-xs leading-relaxed text-[#475569] font-normal">
                       {companyInfo.contact.address.road},<br />
                       {companyInfo.contact.address.plot},<br />
                       {companyInfo.contact.address.area},<br />
@@ -132,12 +132,12 @@ export default function ContactSection() {
           </div>
 
           {/* Right Column: Professional B2B Inquiry Form */}
-          <div className="lg:col-span-7 bg-white p-8 sm:p-10 rounded-2xl border border-black/10 shadow-lg">
-            <div className="mb-6">
-              <h3 className="text-xl sm:text-2xl font-extrabold text-[#111111] tracking-tight">
+          <div className="lg:col-span-7 bg-white p-6 sm:p-8 rounded-xl border border-neutral-200/80 shadow-xs">
+            <div className="mb-5">
+              <h3 className="text-lg sm:text-xl font-bold text-[#0F172A] tracking-tight">
                 Submit a Manufacturing Inquiry
               </h3>
-              <p className="text-xs sm:text-sm text-[#5A5A5A] mt-1">
+              <p className="text-xs sm:text-sm text-[#475569] mt-1">
                 Receive tech-pack review, price quotation, and sampling turnaround estimates within 24 hours.
               </p>
             </div>
